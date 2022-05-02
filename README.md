@@ -25,13 +25,13 @@ $ aws configure --profile localstack
 
 adicione as credenciais conforme necessário:
 ```
-para access_key : "mock_access_key"
-para secret_key : "mock_secret_key"
-para region : "us-east-1"
+para access_key : mock_access_key
+para secret_key : mock_secret_key
+para region : us-east-1
 para output : json
 ```
 
-Para consultar um recruso, segue o exemplo:
+Para consultar um recurso, segue o exemplo:
 
 ```sh
 $ aws --endpoint-url=http://localhost:4566 s3 ls --profile localstack
