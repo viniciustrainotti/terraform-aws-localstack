@@ -46,6 +46,6 @@ Considerando que você tenha já o client do terraform `terraform` instalado e c
 ```sh
 $ terraform init
 $ terraform plan
-$ terraform apply -auto-aprove
+$ terraform apply -auto-approve
 $ terraform destroy
 ```
