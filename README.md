@@ -1,5 +1,7 @@
 # Terraform AWS LocalStack
 
+Esse repositório apresenta o exemplo básico do docs do `LocalStack` com integração com o `Terraform` que pode ser acessado nesse link: [Integration Terraform](https://docs.localstack.cloud/integrations/terraform/)
+
 Após fazer o download do repositório executar os comandos abaixo, conforme necessidade.
 
 ## LocalStack
