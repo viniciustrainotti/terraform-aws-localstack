@@ -1,16 +1,22 @@
 # Terraform AWS LocalStack
 
-Esse repositório apresenta o exemplo básico do docs do `LocalStack` com integração com o `Terraform` que pode ser acessado nesse link: [Integration Terraform](https://docs.localstack.cloud/integrations/terraform/)
+Esse repositório apresenta um exemplo prático do `LocalStack` com integração com o `Terraform` que pode ser acessado nesse link: [HotDog](https://dev.to/mrwormhole/localstack-with-terraform-and-docker-for-running-aws-locally-3a6d)
 
 Após fazer o download do repositório executar os comandos abaixo, conforme necessidade.
 
 ## GoLang
 
-Para fazer o build da aplicação, será necessário a versão `1.16` do `GoLang`, caso você tenha o `asdf` instalado, basta executar:
+Para preparar o ambiente para o build da aplicação, será necessário a versão `1.16` do `GoLang`, caso você tenha o `asdf` instalado, basta executar os comandos abaixo. Senão será necessário realizar a instalação pelo site oficial do [Go](https://go.dev/dl/)
+
 ```sh
 $ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 $ asdf install golang 1.16
 $ asdf local golang 1.16
+```
+
+Para realizar o build da aplicação executar o arquivo sh que consta na raiz do projeto.
+
+```sh
 $ ./zip-it.sh
 ```
 
@@ -45,7 +51,7 @@ para region : us-east-1
 para output : json
 ```
 
-Para verificar a criação dos recursos do sistema, segue os passos:
+Para verificar a criação dos recursos do sistema, após provisionar a infraestrutura pelo terraform, segue os passos:
 
 ```sh
 $ aws --endpoint-url=http://localhost:4566 lambda list-functions --profile localstack
@@ -53,7 +59,7 @@ $ aws --endpoint-url=http://localhost:4566 dynamodb list-tables --profile locals
 $ aws --endpoint-url=http://localhost:4566 kinesis list-streams --profile localstack
 ```
 
-Para executar e utilizar os recursos do sistema, segue os passos:
+Para executar e utilizar os recursos do sistema, execute o exemplo abaixo:
 ```sh
 $ aws lambda invoke --function-name dogCatcher --endpoint-url=http://localhost:4566 --cli-binary-format raw-in-base64-out --payload '{"quantity": 2}' output.txt --profile localstack
 $ aws dynamodb scan --endpoint-url http://localhost:4566 --table-name dogs --profile localstack
