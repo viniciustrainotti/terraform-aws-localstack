@@ -14,9 +14,10 @@ $ asdf install golang 1.16
 $ asdf local golang 1.16
 ```
 
-Para realizar o build da aplicação executar o arquivo sh que consta na raiz do projeto.
+Para realizar o build da aplicação, executar o arquivo sh que consta na raiz do projeto. É necessário ter o `zip` instalado.
 
 ```sh
+$ apt install zip -y
 $ ./zip-it.sh
 ```
 
