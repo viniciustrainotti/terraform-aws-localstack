@@ -41,7 +41,7 @@ $ aws --endpoint-url=http://localhost:4566 s3 ls --profile localstack
 
 ## Terraform
 
-Considerando que você tenha já o client do terraform `terraform` instalado e configurado corretamente, execute:
+Considerando que você tenha já o client do `terraform` instalado e configurado corretamente, execute:
 
 ```sh
 $ terraform init
