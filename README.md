@@ -33,7 +33,7 @@ $ docker-compose up -d --build
 Para deletar a infraestrutura, execute:
 ```sh
 $ docker-compose down
-$ docker network delete localstack-tutorial
+$ docker network rm localstack-tutorial
 ```
 
 ## AWS
