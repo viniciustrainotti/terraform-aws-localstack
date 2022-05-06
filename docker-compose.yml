@@ -23,7 +23,7 @@ services:
       - KINESIS_PROVIDER=kinesalite
       - PORT_WEB_UI=8888
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock" # se você tiver o docker rootless use outro sock -> echo $DOCKER_HOST
       - "localstack_data:/tmp/localstack/data"
     networks:
           default:
