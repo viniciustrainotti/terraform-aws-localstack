@@ -49,3 +49,17 @@ $ terraform plan
 $ terraform apply -auto-approve
 $ terraform destroy
 ```
+
+## Example
+
+Para copiar e visualizar uma imagem no bucket, segue os comandos:
+
+URL: http://localhost:4566/my-bucket-localstack/pug.png
+
+```sh
+$ aws --endpoint-url=http://localhost:4566 s3 ls --profile localstack
+$ aws --endpoint-url=http://localhost:4566 s3 cp imgs/pug.png s3://my-bucket-localstack/ --profile localstack
+$ aws --endpoint-url=http://localhost:4566 s3 ls s3://my-bucket-localstack --recursive --human-readable --summarize --profile localstack
+$ aws --endpoint-url=http://localhost:4566 s3 rm s3://my-bucket-localstack/pug.png --profile localstack
+```
+
